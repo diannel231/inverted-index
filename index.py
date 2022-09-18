@@ -12,6 +12,8 @@ class index:
 
     def buildIndex(self):
 
+        start_time = time.time()
+
         doc_files = [f for f in os.listdir(self.path) if os.path.isfile(os.path.join(self.path, f))]
 
         index = {}
@@ -50,7 +52,7 @@ class index:
 
                 inverted_index[word].append({doc_id: position})
 
-        print(inverted_index)
+        print("Index built in", time.time() - start_time, "seconds")
 
 
 
