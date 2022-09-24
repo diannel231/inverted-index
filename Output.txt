@@ -1,0 +1,90 @@
+C:\Users\Temp\Documents\GitHub\inverted-index\venv\Scripts\python.exe C:\Users\Temp\Documents\GitHub\inverted-index\index.py 
+Index built in 0.980000019073 seconds
+Querying dictionary with key words: ['with', 'without', 'yemen']
+Total docs retrieved: 6
+Text-115.txt
+Term: "with" found in file "Text-115.txt" at positions: [23, 93, 249, 495, 676, 773]
+Term: "without" found in file "Text-115.txt" at positions: [559]
+Term: "yemen" found in file "Text-115.txt" at positions: [355]
+Text-117.txt
+Term: "with" found in file "Text-117.txt" at positions: [340, 348, 350, 360, 500, 516, 546, 575, 580]
+Term: "without" found in file "Text-117.txt" at positions: [177]
+Term: "yemen" found in file "Text-117.txt" at positions: [229]
+Text-121.txt
+Term: "with" found in file "Text-121.txt" at positions: [390, 402, 555, 724, 780, 842, 924, 1128, 1655, 1732, 1747, 1762, 1785, 1859, 2151, 2596, 2652, 2867, 2930, 2988, 3010, 3118, 3185, 3331, 3383, 3448, 3498, 3526, 3576, 3596, 3644, 3656, 3813, 3826, 4038, 4139, 4225, 4267, 4307, 4427, 4574, 4878]
+Term: "without" found in file "Text-121.txt" at positions: [3032]
+Term: "yemen" found in file "Text-121.txt" at positions: [490, 608, 993, 3678, 3968, 4337]
+Text-159.txt
+Term: "with" found in file "Text-159.txt" at positions: [550, 594, 605, 859, 959]
+Term: "without" found in file "Text-159.txt" at positions: [618, 997]
+Term: "yemen" found in file "Text-159.txt" at positions: [943]
+Text-86.txt
+Term: "with" found in file "Text-86.txt" at positions: [42, 123, 340, 349, 455, 610]
+Term: "without" found in file "Text-86.txt" at positions: [52]
+Term: "yemen" found in file "Text-86.txt" at positions: [600]
+Text-99.txt
+Term: "with" found in file "Text-99.txt" at positions: [310, 518, 636, 702, 879, 912, 916, 921, 1132, 1298, 1330]
+Term: "without" found in file "Text-99.txt" at positions: [414]
+Term: "yemen" found in file "Text-99.txt" at positions: [0, 7, 45, 318, 358, 511, 547, 832, 984, 1193, 1341]
+Retrieved in 0.000999927520752 seconds
+------------------------------------------------------------------------------------------------------------
+Querying dictionary with key words: ['americans', 'europe']
+Total docs retrieved: 7
+Text-174.txt
+Term: "americans" found in file "Text-174.txt" at positions: [250]
+Term: "europe" found in file "Text-174.txt" at positions: [30, 59, 70, 74, 129, 132, 153, 176, 285]
+Text-204.txt
+Term: "americans" found in file "Text-204.txt" at positions: [407]
+Term: "europe" found in file "Text-204.txt" at positions: [63]
+Text-228.txt
+Term: "americans" found in file "Text-228.txt" at positions: [263]
+Term: "europe" found in file "Text-228.txt" at positions: [0, 22, 72, 144, 573]
+Text-343.txt
+Term: "americans" found in file "Text-343.txt" at positions: [766]
+Term: "europe" found in file "Text-343.txt" at positions: [126, 251]
+Text-47.txt
+Term: "americans" found in file "Text-47.txt" at positions: [3299, 3367, 4151]
+Term: "europe" found in file "Text-47.txt" at positions: [0, 175, 191, 285, 420, 550, 605, 652, 671, 889, 910, 939, 1007, 1048, 1376, 1477, 2539, 2812, 2882, 3036, 3090, 3115, 3384, 3644, 3713, 3800, 3817, 3859, 3992, 3998, 4005]
+Text-48.txt
+Term: "americans" found in file "Text-48.txt" at positions: [387, 486, 491, 600]
+Term: "europe" found in file "Text-48.txt" at positions: [203, 240, 364, 469, 522, 577, 614, 672, 781, 785, 789, 802, 825, 927, 936]
+Text-54.txt
+Term: "americans" found in file "Text-54.txt" at positions: [89, 98]
+Term: "europe" found in file "Text-54.txt" at positions: [113, 358, 602, 611, 630]
+Retrieved in 0.0 seconds
+------------------------------------------------------------------------------------------------------------
+Querying dictionary with key words: ['greatest', 'country', 'asian']
+Total docs retrieved: 2
+Text-104.txt
+Term: "greatest" found in file "Text-104.txt" at positions: [58]
+Term: "country" found in file "Text-104.txt" at positions: [109]
+Term: "asian" found in file "Text-104.txt" at positions: [159]
+Text-343.txt
+Term: "greatest" found in file "Text-343.txt" at positions: [263]
+Term: "country" found in file "Text-343.txt" at positions: [199, 521, 719, 976, 1099, 2507]
+Term: "asian" found in file "Text-343.txt" at positions: [376]
+Retrieved in 0.000999927520752 seconds
+------------------------------------------------------------------------------------------------------------
+Querying dictionary with key words: ['thousands', 'more', 'citizens']
+Total docs retrieved: 2
+Text-136.txt
+Term: "thousands" found in file "Text-136.txt" at positions: [156]
+Term: "more" found in file "Text-136.txt" at positions: [157]
+Term: "citizens" found in file "Text-136.txt" at positions: [145, 187]
+Text-343.txt
+Term: "thousands" found in file "Text-343.txt" at positions: [675, 959, 3473]
+Term: "more" found in file "Text-343.txt" at positions: [999, 1622, 1985, 2068, 2083, 2241, 2984, 3681, 4211]
+Term: "citizens" found in file "Text-343.txt" at positions: [839, 2019, 2771]
+Retrieved in 0.0 seconds
+------------------------------------------------------------------------------------------------------------
+Querying dictionary with key words: ['socialist', 'administration', 'industry']
+Total docs retrieved: 2
+Text-121.txt
+Term: "socialist" found in file "Text-121.txt" at positions: [2417]
+Term: "administration" found in file "Text-121.txt" at positions: [4411, 4485]
+Term: "industry" found in file "Text-121.txt" at positions: [4191]
+Text-272.txt
+Term: "socialist" found in file "Text-272.txt" at positions: [64, 108, 208, 313]
+Term: "administration" found in file "Text-272.txt" at positions: [209, 520]
+Term: "industry" found in file "Text-272.txt" at positions: [187, 267]
+Retrieved in 0.0 seconds

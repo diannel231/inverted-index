@@ -27,6 +27,7 @@ class index:
         #build top down index first with dicId as key
         index = {}
         for each_file in doc_files:
+            # Tokenization
             with open(self.path + "/" + each_file) as file:
                 text = file.read().replace('\n',' ')
             text_array = re.sub('[^a-zA-Z \n]', '', text).lower().split()
@@ -52,13 +53,14 @@ class index:
         for key, value in index.items():
             self.inverted_index[key] = collections.OrderedDict(sorted(value.items()))
         
-        print("Index built in", time.time() - start_time, "seconds")
-        #print(inverted_index['friedman'])
+        print("Index built in " + str(time.time() - start_time) + " seconds")
+        #print(self.inverted_index)
 
 # function for identifying relevant docs using the index
     def and_query(self, query_terms):
+        start_time = time.time()
         if len(query_terms) == 0:
-            print("Enter atleast one search query!")
+            print("Enter at least one search query!")
             return
         if len(query_terms) == 1:
             return self.getPostingListForTerm(query_terms[0])
@@ -68,6 +70,9 @@ class index:
         for term in query_terms[1:]:
             result = self.intersect(result, self.getPostingListForTerm(term))
         self.post_process_results(result, query_terms, True)
+
+        print("Retrieved in " + str(time.time() - start_time) + " seconds")
+
         return result
     
     def intersect(self, p1, p2):
@@ -90,7 +95,7 @@ class index:
         if len(result) == 0:
             print('No results found!')
             return
-        print('Total docs retrieved:', len(result))
+        print('Total docs retrieved: ' + str(len(result)))
         fileNames = list(self.docIdDictionary.keys())
         docIds = list(self.docIdDictionary.values())
         for docId in result:
@@ -103,7 +108,7 @@ class index:
                         docIdInKey = list(docIdPosDict.keys())[0]
                         if docIdInKey == docId:
                             positions = docIdPosDict[docIdInKey]
-                            print('Term:"'+term+'" found in file',fileName,'at positions',str(positions))
+                            print('Term: "'+term+'" found in file "'+fileName+'" at positions: '+str(positions))
                             
         
 
@@ -130,7 +135,27 @@ class index:
 
 a = index("./collection")
 a.buildIndex()
-a.and_query(['with', 'without', 'yemen', 'yemeni'])
+
+query1 = ['with', 'without', 'yemen']
+print("Querying dictionary with key words: " + str(query1))
+a.and_query(query1)
+print("------------------------------------------------------------------------------------------------------------")
+query2 = ['americans', 'europe']
+print("Querying dictionary with key words: " + str(query2))
+a.and_query(query2)
+print("------------------------------------------------------------------------------------------------------------")
+query3 = ['greatest', 'country', 'asian']
+print("Querying dictionary with key words: " + str(query3))
+a.and_query(query3)
+print("------------------------------------------------------------------------------------------------------------")
+query4 = ['thousands', 'more', 'citizens']
+print("Querying dictionary with key words: " + str(query4))
+a.and_query(query4)
+print("------------------------------------------------------------------------------------------------------------")
+query5 = ['socialist', 'administration', 'industry']
+print("Querying dictionary with key words: " + str(query5))
+a.and_query(query5)
+
 #print(a.getPostingListForTerm('jordan'))
 #a.print_dict()
 #a.print_doc_list()
