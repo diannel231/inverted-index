@@ -69,7 +69,7 @@ class index:
         result = self.getPostingListForTerm(query_terms[0])
         for term in query_terms[1:]:
             result = self.intersect(result, self.getPostingListForTerm(term))
-        self.post_process_results(result, query_terms, True)
+        self.post_process_results(result, query_terms, False)
 
         print("Retrieved in " + str(time.time() - start_time) + " seconds")
 
@@ -120,7 +120,7 @@ class index:
 # function to print the documents and their document id
     def print_doc_list(self):
         for file, idx in self.docIdDictionary.items():
-            print(idx, '==>', file)
+            print('Doc ID: ' + str(idx) + ' ==> ' + file)
             
 # function to get just the docIds for the term
     def getPostingListForTerm(self, term):
@@ -136,6 +136,7 @@ class index:
 a = index("./collection")
 a.buildIndex()
 
+"""
 query1 = ['with', 'without', 'yemen']
 print("Querying dictionary with key words: " + str(query1))
 a.and_query(query1)
@@ -155,6 +156,8 @@ print("-------------------------------------------------------------------------
 query5 = ['socialist', 'administration', 'industry']
 print("Querying dictionary with key words: " + str(query5))
 a.and_query(query5)
+"""
+
 
 #print(a.getPostingListForTerm('jordan'))
 #a.print_dict()
