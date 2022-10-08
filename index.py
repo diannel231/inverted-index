@@ -12,13 +12,33 @@ class index:
     
     docIdDictionary = {}
     inverted_index = {}
+    inv_index = {}
     def buildDocIdList(self, doc_files):
         for idx, each_file in enumerate(doc_files):
             #print(idx, each_file)
             self.docIdDictionary[each_file] = idx
         return self.docIdDictionary
         
-
+    def buildIndexOptimized(self):
+        start_time = time.time()
+        doc_files = [f for f in os.listdir(self.path) if os.path.isfile(os.path.join(self.path, f))]
+        docIdDictionary = self.buildDocIdList(doc_files)
+        # Tokenization
+        for each_file in doc_files:
+            with open(self.path + "/" + each_file) as file:
+                text = file.read().replace('\n',' ')
+            text_array = re.sub('[^a-zA-Z \n]', '', text).lower().split()
+            for idx, token in enumerate(text_array):
+                if token not in self.inverted_index.keys():
+                    self.inverted_index[token] = {}
+                docId = docIdDictionary[each_file]
+                if docId not in self.inverted_index[token].keys():
+                    self.inverted_index[token][docId] = []
+                self.inverted_index[token][docId].append(idx)
+                
+        print("Index built in " + str(time.time() - start_time) + " seconds")
+#        print(self.inverted_index)
+                
     def buildIndex(self):
         start_time = time.time()
         doc_files = [f for f in os.listdir(self.path) if os.path.isfile(os.path.join(self.path, f))]
@@ -124,22 +144,20 @@ class index:
             
 # function to get just the docIds for the term
     def getPostingListForTerm(self, term):
-        docIds = []
         if term in self.inverted_index:    
-            posting_list = self.inverted_index[term] #[{0: [0, 46]}, {54: [842]}, {59: [608]}...
-            for docIdPositionDictionary in posting_list:
-                for docId, positions in docIdPositionDictionary.items():
-                    docIds.append(docId)
-        return docIds
+            posting_list = self.inverted_index[term] #{'woord' : {0: [0, 46], 54: [842], 59: [608]}}
+            return list(posting_list.keys())
+        return []
             
 
 a = index("./collection")
-a.buildIndex()
+a.buildIndexOptimized()
 
-"""
+
 query1 = ['with', 'without', 'yemen']
 print("Querying dictionary with key words: " + str(query1))
 a.and_query(query1)
+"""
 print("------------------------------------------------------------------------------------------------------------")
 query2 = ['americans', 'europe']
 print("Querying dictionary with key words: " + str(query2))
